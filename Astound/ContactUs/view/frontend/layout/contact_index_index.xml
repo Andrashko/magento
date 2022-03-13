@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Contact Us</title>
+    </head>
+    <body>
+        <referenceBlock name="breadcrumbs">
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Home</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Home</item>
+                    <item name="label" xsi:type="string">Home</item>
+                    <item name="link" xsi:type="string">{{baseUrl}}</item>
+                </argument>
+            </action>
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Contact Us</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Contact Us</item>
+                    <item name="label" xsi:type="string">Contact Us</item>
+                </argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <referenceBlock name="titleBlock" remove="true" />
+            <referenceBlock name="page.main.title" remove="true" />
+            <referenceBlock name="contactForm">
+                <container name="astound.contact.us.main.content" label="Astound ContactUs Main Content">
+                    <block class="Magento\Cms\Block\Block" name="astound.contact.us.main.content.default">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">ast_contactUs_main_content_default</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="form.additional.info.extra" label="Form Additional Info Extra"/>
+                <action method="setTemplate">
+                    <argument name="template" xsi:type="string">Astound_ContactUs::form.phtml</argument>
+                </action>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,17 @@
+{
+  "name": "astound/module-contact-us",
+  "license": "proprietary",
+  "description": "Astound Contact Us",
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Astound\\ContactUs\\": ""
+    }
+  },
+  "require": {
+    "magento/module-contact": "*"
+  }
+}

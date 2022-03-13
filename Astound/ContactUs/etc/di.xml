@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Contact\Block\ContactForm" type="Astound\ContactUs\Block\ContactForm" />
+    <type name="Magento\Contact\Controller\Index\Post">
+        <plugin name="contact-us-post-validated-params" type="Astound\ContactUs\Model\Plugin\Controller\Index\Post" sortOrder="10"/>
+    </type>
+</config>

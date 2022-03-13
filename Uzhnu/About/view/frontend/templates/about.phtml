@@ -1,0 +1,17 @@
+<?php
+    use Uzhnu\About\Block\Datasource ;
+    /** @var Datasource $block */
+    $author = $block->getAuthor();
+?>
+<h1>Variant <?= $block->getVariant() ?> </h1>
+<img src="<?= $author['Avatar']['Url'] ?>" alt="<?= $author['Name']?>" width="<?= $author['Avatar']['Size']  ?>">
+<?php if ($author['Email']): ?>
+    <a href="mailto:<?= $author['Email'] ?>">Send mail</a>
+<?php endif; ?>
+<br>
+<ol>
+    <?php foreach ($author['Subjects'] as $subject):?>
+        <li> <?= $subject ?></li>
+    <?php endforeach;?>
+</ol>
+
