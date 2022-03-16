@@ -3,24 +3,23 @@
 namespace Uzhnu\About\Block;
 
 use \Magento\Framework\View\Element\Template;
+use \Magento\Framework\View\Element\Template\Context;
+use Uzhnu\About\Model\AuthorFactory;
 
 class Datasource extends Template
 {
-    public function getAuthor(): array
+    protected AuthorFactory $authorFactory;
+
+    public function __construct(Template\Context $context, AuthorFactory $authorFactory, array $data = [])
     {
-        return [
-            "Name" => "Yurii",
-            "Email" => "yurii.andrashko@uzhnu.edu.ua",
-            "Avatar"=> [
-                "Url" => "https://devdocs.magento.com/assets/i/adobe-a.svg",
-                "Size" => 128
-            ],
-            "Subjects" => ["Magento", "Data Scraping", "Web-programing", "ASP.NET"]
-        ];
+        $this->authorFactory = $authorFactory;
+        parent::__construct($context, $data);
     }
 
-    public function getVariant(): int
+    public  function getAuthors()
     {
-        return 42;
+        $authors = $this->authorFactory->create();
+        return $authors->getCollection();
     }
+
 }
