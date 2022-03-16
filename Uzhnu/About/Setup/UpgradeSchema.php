@@ -12,7 +12,6 @@ class UpgradeSchema implements UpgradeSchemaInterface
     public function upgrade(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
-        //if(version_compare($context->getVersion(), '0.1.2', '<'))
         $tableName = $setup->getTable('uzhnu_about_author');
         if (!$setup->getConnection()->isTableExists($tableName)){
             $table = $setup
@@ -38,6 +37,19 @@ class UpgradeSchema implements UpgradeSchemaInterface
                     'Name'
                 );
             $setup->getConnection()->createTable($table);
+        }
+
+        if(version_compare($context->getVersion(), '0.1.5', '<')){
+            $setup->getConnection()->addColumn(
+                $tableName,
+                'email',
+                [
+                    'type' =>  Table::TYPE_TEXT,
+                    'nullable' => true,
+                    'length' => 255,
+                    'comment' => 'Email',
+                ]
+            );
         }
         $setup->endSetup();
     }

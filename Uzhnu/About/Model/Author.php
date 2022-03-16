@@ -30,6 +30,9 @@ class Author extends AbstractModel implements  IdentityInterface, AuthorInterfac
         return $this->getData('name');
     }
 
-
+    public function getEmail()
+    {
+        return $this->getData('email');
+    }
 }
 

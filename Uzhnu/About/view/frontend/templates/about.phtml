@@ -5,7 +5,11 @@
 
 <ol>
     <?php foreach ($block->getAuthors() as $author):?>
-        <li> <?= $author->getName() ?></li>
+        <li>
+            <a href="mailto:<?= $author->getEmail() ?>" ?>
+                <?= $author->getName() ?>
+            </a>
+        </li>
     <?php endforeach;?>
 </ol>
 

@@ -17,19 +17,22 @@ class UpgradeData implements UpgradeDataInterface
 
         $tableName = $setup->getTable('uzhnu_about_author');
 
-        $data = [
+        if(version_compare($context->getVersion(), '0.1.5', '<')) {
+            $data = [
                 [
-                    'name' => 'Yurii Andrashko'
+                    'name' => 'Yurii Andrashko',
+                    'email' => "yurii.andrashko@uzhnu.edu.ua",
                 ],
                 [
-                    'name' => 'Andrii Bryla'
+                    'name' => 'Andrii Bryla',
+                    'email' => "andrii.bryla@uzhnu.edu.ua",
                 ],
-        ];
+            ];
 
-        $setup
+            $setup
                 ->getConnection()
                 ->insertMultiple($tableName, $data);
-
+        }
         $setup->endSetup();
     }
 }
