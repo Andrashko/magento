@@ -1,0 +1,16 @@
+{
+    "name": "uzhnu/module-show-popup-contentn",
+    "license": "proprietary",
+    "description": "ShowPopupContent ",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Uzhnu\\ShowPopupContent\\": ""
+        }
+    },
+    "require": {
+    }
+}

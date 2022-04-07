@@ -1,0 +1,27 @@
+<?php
+    /** @var  Magento\Catalog\Block\Product\View $block*/
+?>
+<div class="help">
+    <a href="#"> <?= __("Help")  ?> </a>
+</div>
+<div class="help-content" id="help-content">
+    <?= $block->getLayout()->createBlock("Magento\Cms\Block\Block")->setBlockId("help-popup")->toHtml() ?>
+</div>
+<script>
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/modal'
+    ], ($, modal) =>{
+        let options = {
+            type:'slide',
+            responsive:true,
+            innerScroll: true,
+            title: "<?= __('Help') ?>"
+        };
+        let slide = modal( options, $("#help-content"));
+        $(".help a").on("click", ()=>{
+           $("#help-content").modal("openModal");
+           return false;
+        });
+    });
+</script>

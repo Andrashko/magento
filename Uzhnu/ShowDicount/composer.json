@@ -1,0 +1,16 @@
+{
+    "name": "uzhnu/module-show-discount",
+    "license": "proprietary",
+    "description": "ShowDiscount ",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Uzhnu\\ShowDiscount\\": ""
+        }
+    },
+    "require": {
+    }
+}
