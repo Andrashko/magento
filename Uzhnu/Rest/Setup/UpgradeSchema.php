@@ -1,6 +1,6 @@
 <?php
 
-namespace  Uzhnu\About\Setup;
+namespace  Uzhnu\Rest\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
 use \Magento\Framework\Setup\ModuleContextInterface;
@@ -12,13 +12,13 @@ class UpgradeSchema implements UpgradeSchemaInterface
     public function upgrade(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
-        $tableName = $setup->getTable('uzhnu_about_author');
-        if (!$setup->getConnection()->isTableExists($tableName)){
+        $tableName = $setup->getTable('uzhnu_rest_author');
+        if (!$setup->getConnection()->isTableExists($tableName)) {
             $table = $setup
                 ->getConnection()
                 ->newTable($tableName)
                 ->addColumn(
-                    'id',
+                    'author_id',
                     Table::TYPE_INTEGER,
                     null,
                     [
@@ -32,24 +32,19 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 ->addColumn(
                     'name',
                     Table::TYPE_TEXT,
-                   255,
+                    255,
+                    ['nullable' => false],
+                    'Name'
+                )
+                ->addColumn(
+                    'email',
+                    Table::TYPE_TEXT,
+                    255,
                     ['nullable' => false],
                     'Name'
                 );
-            $setup->getConnection()->createTable($table);
-        }
 
-        if(version_compare($context->getVersion(), '0.1.5', '<')){
-            $setup->getConnection()->addColumn(
-                $tableName,
-                'email',
-                [
-                    'type' =>  Table::TYPE_TEXT,
-                    'nullable' => true,
-                    'length' => 255,
-                    'comment' => 'Email',
-                ]
-            );
+            $setup->getConnection()->createTable($table);
         }
         $setup->endSetup();
     }

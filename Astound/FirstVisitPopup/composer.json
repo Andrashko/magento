@@ -1,0 +1,21 @@
+{
+  "name": "astound/module-first-visit-popup",
+  "license": "proprietary",
+  "description": "Astound First Visit Popup",
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Astound\\FirstVisitPopup\\": ""
+    }
+  },
+  "require": {
+    "astound/module-base-entity": "~v1.0.0",
+    "astound/module-base-admin-menu": "~v1.0.0"
+  },
+  "suggest": {
+    "astound/module-first-visit-popup-staging": "~v1.0.0"
+  }
+}

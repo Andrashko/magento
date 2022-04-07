@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="astound_firstvisitpopup_api_data_firstvisitpopupinterface_save_after">
+        <observer name="legacy_model_first_visit_popup_after_save" instance="Magento\Framework\EntityManager\Observer\AfterEntitySave" />
+    </event>
+</config>

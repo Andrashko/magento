@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="astound_first_visit_popup" class="Astound\FirstVisitPopup\Block\Widget\Newsletter">
+        <label translate="true">Astound Newsletter Widget</label>
+        <description translate="true">Astound Newsletter Widget</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="true" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="false" required="true">
+                <options>
+                    <option name="default" value="widget/newsletter.phtml" selected="true">
+                        <label translate="true">Astound Newsletter Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

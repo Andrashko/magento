@@ -1,14 +1,14 @@
 {
-    "name": "uzhnu/module-ebout",
+    "name": "uzhnu/module-rest",
     "license": "proprietary",
-    "description": "Custom about page ",
+    "description": "Rest api",
     "type": "magento2-module",
     "autoload": {
         "files": [
             "registration.php"
         ],
         "psr-4": {
-            "Uzhnu\\About\\": ""
+            "Uzhnu\\Rest\\": ""
         }
     },
     "require": {

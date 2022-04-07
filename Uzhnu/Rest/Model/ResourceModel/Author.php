@@ -1,27 +1,17 @@
 <?php
-namespace AlexPoletaev\Blog\Model\ResourceModel;
+namespace Uzhnu\Rest\Model\ResourceModel;
 
-use AlexPoletaev\Blog\Api\Data\PostInterface;
+use Uzhnu\Rest\Api\Data\AuthorInterface;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
-/**
- * Class Post
- * @package AlexPoletaev\Blog\Model\ResourceModel
- */
-class Post extends AbstractDb
-{
-    /**
-     * @var string
-     */
-    const TABLE_NAME = 'alex_poletaev_blog_post';
 
-    /**
-     * Resource initialization
-     *
-     * @return void
-     */
+class Author extends AbstractDb
+{
+
+    const TABLE_NAME = 'uzhnu_rest_author';
+
     protected function _construct() //@codingStandardsIgnoreLine
     {
-        $this->_init(self::TABLE_NAME, PostInterface::ID);
+        $this->_init('uzhnu_rest_author', 'author_id');
     }
 }

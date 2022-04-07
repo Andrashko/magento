@@ -1,0 +1,41 @@
+<?php
+/**
+ * Newsletter Popup Block
+ *
+ * @var \Astound\FirstVisitPopup\Block\Widget\Newsletter $block
+ */
+?>
+
+<div class="newsletter-widget-content" id="newsletter-popup">
+    <form class="form subscribe"
+          novalidate
+          action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+          method="post"
+          data-popup-title="<?= $block->escapeHtml($block->getTitle()) ?>"
+          data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+          id="popup-newsletter-validate-detail">
+        <div class="newsletter-response"></div>
+        <label class="newsletter-input-label required"
+               for="newsletter-popup-field"><?= $block->escapeHtml($block->getTitle()) ?></label>
+        <div class="newsletter-input-wrapper">
+            <div class="newsletter-input-box control">
+                <input name="email"
+                       class="newsletter-input"
+                       type="email" id="newsletter-popup-field"
+                       placeholder="<?= $block->escapeHtml(__('Please enter your email...')) ?>"
+                       data-validate="{required:true, 'validate-email':true}" />
+                <img class="js-ajax-loader newsletter-input-loader"
+                     style="display: none;"
+                     src="<?= $this->getViewFileUrl('images/ajax-loader.gif') ?>"
+                     alt="<?= $block->escapeHtml(__('Loading...')) ?>" />
+            </div>
+            <div class="newsletter-sign-button actions">
+                <button class="action subscribe primary"
+                        title="<?= $block->escapeHtmlAttr(__('Sign up')) ?>"
+                        type="submit">
+                    <?= $block->escapeHtml(__('Sign up')) ?>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

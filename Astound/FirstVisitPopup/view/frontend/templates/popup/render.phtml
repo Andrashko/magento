@@ -1,0 +1,15 @@
+<?php
+/** @var \Astound\FirstVisitPopup\Block\Popup $block */
+?>
+<?php if ($content = $block->getEntityContent()) :?>
+    <div id="modal-container-popup" style="display:none;" data-bind="scope:'first-visit-popup'">
+        <?php /* @noEscape */ echo $content ?>
+    </div>
+    <script type="text/x-magento-init">
+    {
+        "#modal-container-popup": {
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>
+        }
+    }
+    </script>
+<?php endif;?>

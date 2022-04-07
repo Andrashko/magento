@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Astound_FirstVisitPopup::notifications_popup"
+             title="Popups"
+             translate="title"
+             module="Astound_FirstVisitPopup"
+             sortOrder="60"
+             parent="Astound_BaseAdminMenu::marketing_notifications"
+             action="astound_firstVisitPopup/popup/index"
+             resource="Astound_FirstVisitPopup::marketing_notifications_popup" />
+    </menu>
+</config>

@@ -1,21 +1,16 @@
 <?php
-namespace AlexPoletaev\Blog\Model\ResourceModel\Post;
+namespace Uzhnu\Rest\Model\ResourceModel\Author;
 
-use AlexPoletaev\Blog\Model\Post;
-use AlexPoletaev\Blog\Model\ResourceModel\Post as PostResource;
+use Uzhnu\Rest\Model\Author;
+use Uzhnu\Rest\Model\ResourceModel\Author as AuthorResource;
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
-/**
- * Class Collection
- * @package AlexPoletaev\Blog\Model\ResourceModel\Post
- */
+
 class Collection extends AbstractCollection
 {
-    /**
-     * @inheritdoc
-     */
-    protected function _construct() //@codingStandardsIgnoreLine
+
+    protected function _construct()
     {
-        $this->_init(Post::class, PostResource::class);
+        $this->_init(Author::class, AuthorResource::class);
     }
 }

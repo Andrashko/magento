@@ -1,6 +1,6 @@
 <?php
 
-namespace  Uzhnu\About\Setup;
+namespace  Uzhnu\Rest\Setup;
 
 use \Magento\Framework\Setup\UpgradeDataInterface;
 use \Magento\Framework\Setup\ModuleContextInterface;
@@ -15,9 +15,9 @@ class UpgradeData implements UpgradeDataInterface
     {
         $setup->startSetup();
 
-        $tableName = $setup->getTable('uzhnu_about_author');
+        $tableName = $setup->getTable('uzhnu_rest_author');
 
-        if(version_compare($context->getVersion(), '0.1.5', '<')) {
+        if(version_compare($context->getVersion(), '0.0.2', '<')) {
             $data = [
                 [
                     'name' => 'Yurii Andrashko',
