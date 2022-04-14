@@ -9,6 +9,7 @@ use Magento\Framework\UrlInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Message\ManagerInterface;
 use Magento\Customer\Controller\Account\LoginPost as MagentoLoginPost;
+use Uzhnu\CustomerLogin\Model\Customer\Attribute\Source\Reason;
 
 class LoginPost
 {
@@ -42,13 +43,16 @@ class LoginPost
      */
     protected $messageManager;
 
+    protected Reason $reasonsList;
+
     public function __construct(
         Session $customerSession,
         AccountManagementInterface $customerAccountManagement,
         ResponseFactory $responseFactory,
         UrlInterface $url,
         RequestInterface $request,
-        ManagerInterface $messageManager
+        ManagerInterface $messageManager,
+        Reason $reasonsList
     )
     {
         $this->session = $customerSession;
@@ -57,6 +61,7 @@ class LoginPost
         $this->url = $url;
         $this->request = $request;
         $this->messageManager = $messageManager;
+        $this->reasonsList = $reasonsList;
     }
 
     public function beforeExecute(
@@ -74,8 +79,13 @@ class LoginPost
                         if ($loginStatus && $loginStatus->getValue() == '1') {
                             // Display the reason
                             // You can create a customization message here
+                            $reasonCode = $customer->getCustomAttribute('reason');
+                            $reasonValue = '';
+                            if (!empty($reasonCode)) {
+                                $reasonValue = $reasonCode->getValue();
+                            }
                             $this->messageManager->addError(
-                                __('Your account is blocked for the security reason, please contact us for details.')
+                                __('Your account is blocked for the following reason: %1', $this->reasonsList->getMessage($reasonValue))
                             );
                             $resultRedirect = $this->responseFactory->create();
                             // Redirect to the customer login page

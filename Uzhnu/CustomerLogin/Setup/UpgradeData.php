@@ -39,9 +39,23 @@ class UpgradeData implements UpgradeDataInterface
                 "login_status",
                 1000,
                 "Blocked",
+                "Magento\Eav\Model\Entity\Attribute\Source\Boolean",
                 "0",
                 "boolean",
                 "int",
+                ""
+            );
+
+        if (!$this->hasAttribute( $customerSetup,"reason"))
+            $this->addAttribute(
+                $customerSetup,
+                "reason",
+                1100,
+                "Reason",
+                "Uzhnu\CustomerLogin\Model\Customer\Attribute\Source\Reason",
+                "0",
+                "select",
+                "varchar",
                 ""
             );
 
@@ -63,6 +77,7 @@ class UpgradeData implements UpgradeDataInterface
         string $attributeName,
         int $sortOrder,
         string $attributeLabel,
+        string $source,
         string $default,
         string $inputType,
         string $type,
@@ -84,7 +99,7 @@ class UpgradeData implements UpgradeDataInterface
                 "position" => $sortOrder,
                 "default" => $default,
                 "backend" => $backend,
-                "source" => "Magento\Eav\Model\Entity\Attribute\Source\Boolean",
+                "source" => $source,
                 "required" => false,
                 "visible" => true,
                 "user_defined" => true,
