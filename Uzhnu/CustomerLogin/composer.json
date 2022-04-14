@@ -1,0 +1,17 @@
+{
+    "name": "uzhnu/module-customer-login",
+    "license": "proprietary",
+    "description": "Customer Login Block",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Uzhnu\\CustomerLogin\\": ""
+        }
+    },
+    "require": {
+        "magento/module-customer": "*"
+    }
+}
