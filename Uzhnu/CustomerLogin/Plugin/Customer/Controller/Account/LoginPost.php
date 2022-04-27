@@ -50,9 +50,7 @@ class LoginPost
         AccountManagementInterface $customerAccountManagement,
         ResponseFactory $responseFactory,
         UrlInterface $url,
-        RequestInterface $request,
-        ManagerInterface $messageManager,
-        Reason $reasonsList
+        RequestInterface $request, cReason $reasonsList
     )
     {
         $this->session = $customerSession;

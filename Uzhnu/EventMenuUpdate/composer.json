@@ -1,0 +1,16 @@
+{
+    "name": "uzhnu/module-event-menu-update",
+    "license": "proprietary",
+    "description": "EventMenuUpdate",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Uzhnu\\EventMenuUpdate\\": ""
+        }
+    },
+    "require": {
+    }
+}
