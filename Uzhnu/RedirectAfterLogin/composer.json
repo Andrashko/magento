@@ -1,0 +1,16 @@
+{
+    "name": "uzhnu/module-redirect-after-login",
+    "license": "proprietary",
+    "description": "RedirectAfterLogin",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Uzhnu\\RedirectAfterLogin\\": ""
+        }
+    },
+    "require": {
+    }
+}
