@@ -1,0 +1,16 @@
+{
+    "name": "uzhnu/module-Clock",
+    "license": "proprietary",
+    "description": "Change quantity ",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Uzhnu\\Clock\\": ""
+        }
+    },
+    "require": {
+    }
+}

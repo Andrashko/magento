@@ -1,0 +1,20 @@
+<?php
+/* @var Uzhnu\Clock\Block\Clock $block */
+?>
+<div data-bind="scope: 'knockout-clock'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "knockout-clock": {
+                        "component": "Uzhnu_Clock/js/viewModel",
+                        "template" : "Uzhnu_Clock/template"
+                    }
+                }
+            }
+        }
+    }
+</script>
