@@ -1,0 +1,13 @@
+<h3 data-bind="text:title">
+</h3>
+
+<ul>
+    <!--ko foreach: {data: getItems(), as: "page"} -->
+    <li>
+       <a data-bind="attr: {href: page.url}, text: page.title">
+       </a>
+    </li>
+   <!--/ko-->
+</ul>
+
+

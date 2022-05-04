@@ -1,0 +1,24 @@
+<?php
+/* @var Uzhnu\ListPages\Block\PageList $block */
+?>
+<div data-bind="scope: 'knockout-page-list'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "knockout-page-list": {
+                        "component": "Uzhnu_ListPages/js/viewModel",
+                        "template" : "Uzhnu_ListPages/template",
+                        "title": " <?= __('List') ?>",
+                        "items" : <?= $block->getListJson() ?>
+                    }
+                }
+            }
+        }
+    }
+</script>
+

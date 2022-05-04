@@ -1,0 +1,16 @@
+{
+    "name": "uzhnu/module-list-pages",
+    "license": "proprietary",
+    "description": "List ",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Uzhnu\\ListPages\\": ""
+        }
+    },
+    "require": {
+    }
+}
